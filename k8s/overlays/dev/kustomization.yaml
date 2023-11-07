@@ -9,15 +9,12 @@ namespace: idp-dev
 # namespace: xgeeks-ai-starter-demo-idp_training-dev
 
 resources:
-  - ../../base
-  - ingress.yaml
+- ../../base
+- ingress.yaml
 
-images:
   # ATENTION name = image.name NOT name = spec.containers[0].name
-  - name: ghcr.io/xgeekshq/xgeeks-ai-starter-demo
-    newTag: v1
-  - name: ghcr.io/xgeekshq/xgeeks-ai-starter-demo-datafeeder
-    newTag: v1
-# replicas:
-#   - name: xgeeks-ai-starter-demo # the deployment name
-#     count: 1
+images:
+- name: ghcr.io/xgeekshq/xgeeks-ai-starter-demo
+  newTag: v1
+- name: ghcr.io/xgeekshq/xgeeks-ai-starter-demo-datafeeder
+  newTag: "1348193"
