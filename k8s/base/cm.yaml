@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: xgeeks-ai-starter-demo-dev-cm
+data:
+  AUTH0_BASE_URL: https://xgeeks-ai-starter-demo-dev.xgeeks.tech
+  # NEXT_PUBLIC_CLERK_SIGN_IN_URL: /sign-in
+  # NEXT_PUBLIC_CLERK_SIGN_UP_URL: /sign-up
+  # NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: /
+  # NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: /

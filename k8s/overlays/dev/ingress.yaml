@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: xgeeks-ai-starter-demo
+  annotations:
+    # argocd.argoproj.io/sync-wave: "5"
+    cert-manager.io/acme-challenge-type: http01
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: xgeeks-ai-starter-demo-dev.xgeeks.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: xgeeks-ai-starter-demo
+                port:
+                  number: 3000
+  tls:
+    - hosts:
+        - xgeeks-ai-starter-demo-dev.xgeeks.tech
+      secretName: xgeeks-ai-starter-demo-dev.xgeeks.tech-tls # will be auto created
